@@ -4,116 +4,71 @@
 <meta charset="utf-8">
 <style>
   body, html { margin: 0; padding: 0; font-family: -apple-system, sans-serif; background: #fff; color: #1e293b; overflow: hidden; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
-  
   #wrapper { width: 800px; height: 600px; position: relative; transform-origin: center center; flex-shrink: 0; }
 
-  .toast { position: absolute; top: 50px; left: 150px; width: 500px; box-sizing: border-box; background: #0f172a; color: #fff; padding: 16px 20px; border-radius: 12px; font-size: 20px; font-weight: 500; opacity: 0; transform: translateY(-10px); transition: 0.3s; z-index: 50; box-shadow: 0 12px 32px rgba(0,0,0,0.2); text-align: center; }
+  .toast { position: absolute; top: 50px; left: 150px; width: 500px; box-sizing: border-box; background: #0f172a; color: #fff; padding: 16px 20px; border-radius: 12px; font-size: 20px; font-weight: 500; text-align: center; z-index: 50; box-shadow: 0 12px 32px rgba(0,0,0,0.2); opacity: 0; transform: translateY(-10px); }
   
   .toolbar-bg { position: absolute; top: 140px; left: 100px; width: 600px; height: 76px; background: #f8fafc; border-radius: 16px; border: 1px solid #cbd5e1; box-shadow: 0 8px 24px rgba(15,23,42,0.05); z-index: 10; }
   
   .btn { position: absolute; top: 154px; height: 48px; border-radius: 12px; border: 2px solid #cbd5e1; font-size: 20px; font-weight: 600; background: #fff; color: #0f172a; display: flex; align-items: center; justify-content: center; z-index: 20; box-sizing: border-box; }
   .btn-notes { left: 120px; width: 170px; }
-  .btn-save { left: 310px; width: 220px; background: #f59e0b; color: #111; border-color: #f59e0b; transition: 0.2s; }
+  .btn-save { left: 310px; width: 220px; background: #f59e0b; color: #111; border-color: #f59e0b; }
+  .btn-save::after { content: "Save notes"; }
   .btn-print { left: 550px; width: 130px; background: #2563eb; color: #fff; border-color: #2563eb; }
   
   .backdrop { position: absolute; top: 260px; left: 100px; width: 600px; font-size: 24px; line-height: 1.6; color: #475569; z-index: 5;}
-  
-  /* Dynamic Sweeping Highlight Effect */
-  .hl { 
-    background-image: linear-gradient(to right, #fde047 50%, transparent 50%); 
-    background-size: 200% 100%; 
-    background-position: 100% 0; 
-    color: #000; 
-    border-radius: 4px; 
-    padding: 2px 0;
-  }
-  
-  .pill { position: absolute; bottom: 50px; left: 100px; width: 600px; box-sizing: border-box; padding: 16px 32px; border-radius: 999px; font-weight: bold; color: #fff; font-size: 22px; background: #2563eb; transition: 0.3s; z-index: 999; box-shadow: 0 8px 24px rgba(37,99,235,0.3); text-align: center; white-space: nowrap; }
+  .highlight { background: #fde047; color: #000; padding: 0 6px; border-radius: 6px; }
+  .pill { position: absolute; bottom: 50px; left: 100px; width: 600px; box-sizing: border-box; padding: 16px 32px; border-radius: 999px; font-weight: bold; color: #fff; font-size: 22px; z-index: 999; box-shadow: 0 8px 24px rgba(37,99,235,0.3); text-align: center; white-space: nowrap; background: #2563eb; }
   
   .cursor { position: absolute; width: 36px; height: 54px; z-index: 1000; top: 0; left: 0; transform: translate(750px, 550px); }
+  .cursor svg { transform: scale(1); }
   
-  /* 8-Second Loop Sequence */
-  @keyframes cursorAnim { 
-      0%, 4% { transform: translate(750px, 550px); } 
-      /* Move to 'U' in 'Under' and pause slightly to look natural */
-      10%, 12% { transform: translate(555px, 318px); } 
-      /* Drag across 'Under it is' */
-      15% { transform: translate(685px, 318px); } 
-      /* Snap to start of next line: 'the mantle...' */
-      17% { transform: translate(100px, 358px); } 
-      /* Drag to the end: 'rock.' */
-      28% { transform: translate(600px, 358px); } 
-      /* Move to Save button and hold */
-      35%, 85% { transform: translate(510px, 190px); } 
-      /* Reset */
-      95%, 100% { transform: translate(750px, 550px); } 
-  }
+  .hl { background-image: linear-gradient(to right, #fde047 50%, transparent 50%); background-size: 200% 100%; color: #000; border-radius: 4px; padding: 2px 0; background-position: 100% 0; }
   
-  @keyframes clickAnim { 
-      0%, 38%, 43%, 100% { transform: scale(1); } 
-      40% { transform: scale(0.85); } /* Click Save button at exactly 40% (3.2s) */
-  }
+  /* Synchronized Keyframes */
+  @keyframes cursorAnim { 0%, 4% { transform: translate(750px, 550px); } 10%, 12% { transform: translate(555px, 318px); } 15% { transform: translate(685px, 318px); } 17% { transform: translate(100px, 358px); } 28% { transform: translate(600px, 358px); } 35%, 85% { transform: translate(510px, 190px); } 95%, 100% { transform: translate(750px, 550px); } }
+  @keyframes clickAnim { 0%, 38%, 43%, 100% { transform: scale(1); } 40% { transform: scale(0.85); } }
+  @keyframes hl1Anim { 0%, 12% { background-position: 100% 0; } 15%, 90% { background-position: 0% 0; } 100% { background-position: 100% 0; } }
+  @keyframes hl2Anim { 0%, 17% { background-position: 100% 0; } 28%, 90% { background-position: 0% 0; } 100% { background-position: 100% 0; } }
+  @keyframes btnColorAnim { 0%, 39.9% { background: #f59e0b; color: #111; border-color: #f59e0b; } 40%, 84.9% { background: #15803d; color: #fff; border-color: #15803d; } 85%, 100% { background: #f59e0b; color: #111; border-color: #f59e0b; } }
+  @keyframes btnTextAnim { 0%, 39.9% { content: "Save notes"; } 40%, 84.9% { content: "✓ Notes saved"; } 85%, 100% { content: "Save notes"; } }
+  @keyframes toastAnim { 0%, 39.9% { opacity: 0; transform: translateY(-10px); } 40%, 84.9% { opacity: 1; transform: translateY(0); } 85%, 100% { opacity: 0; transform: translateY(-10px); } }
+  @keyframes pillColorAnim { 0%, 39.9% { background: #2563eb; } 40%, 84.9% { background: #15803d; } 85%, 100% { background: #2563eb; } }
 
-  @keyframes hl1Anim { 
-      0%, 12% { background-position: 100% 0; } 
-      15%, 90% { background-position: 0% 0; } /* Highlight sweeps in sync with cursor */
-      100% { background-position: 100% 0; } 
-  }
-  
-  @keyframes hl2Anim { 
-      0%, 17% { background-position: 100% 0; } 
-      28%, 90% { background-position: 0% 0; } /* Highlight sweeps in sync with cursor */
-      100% { background-position: 100% 0; } 
-  }
-
-  .cursor { animation: cursorAnim 8s infinite ease-in-out; }
-  .cursor svg { animation: clickAnim 8s infinite; }
-  .hl1 { animation: hl1Anim 8s infinite ease-out; }
-  .hl2 { animation: hl2Anim 8s infinite ease-out; }
+  /* Activated only when 'sync' class is applied */
+  body.sync .cursor { animation: cursorAnim 8s infinite ease-in-out; }
+  body.sync .cursor svg { animation: clickAnim 8s infinite; }
+  body.sync .hl1 { animation: hl1Anim 8s infinite ease-out; }
+  body.sync .hl2 { animation: hl2Anim 8s infinite ease-out; }
+  body.sync .btn-save { animation: btnColorAnim 8s infinite; }
+  body.sync .btn-save::after { animation: btnTextAnim 8s infinite; }
+  body.sync .toast { animation: toastAnim 8s infinite; }
+  body.sync .pill { animation: pillColorAnim 8s infinite; }
 </style>
 </head>
 <body>
   <div id="wrapper">
-    <div class="toast" id="toast">Your saved book has been updated with your latest annotations.</div>
+    <div class="toast">Your saved book has been updated with your latest annotations.</div>
     <div class="toolbar-bg"></div>
     <div class="btn btn-notes">My notes (6)</div>
-    <div class="btn btn-save" id="saveBtn">Save notes</div>
+    <div class="btn btn-save"></div>
     <div class="btn btn-print">Print</div>
     
     <div class="backdrop">
       <h2 style="color:#0f172a; font-size: 32px; margin-top: 0; margin-bottom: 16px;">Week 1: Earth's Layers</h2>
-      <!-- The <br> tag mathematically forces the layout so the cursor never misses -->
       The crust is the thin outside layer we live on. <span class="hl hl1">Under it is</span><br><span class="hl hl2">the mantle, which is hot, slow-moving rock.</span> At the centre is the core, which is made of iron.
     </div>
 
-    <div class="pill" id="pill">One click. No window, no question.</div>
+    <div class="pill">One click. No window, no question.</div>
     <div class="cursor"><svg viewBox="0 0 24 36" fill="none"><path d="M0 0L0 25.4L7 19.3L11.4 28L15.9 26L11.5 17.5L19.7 17.5L0 0Z" fill="#0f172a" stroke="white" stroke-width="1.5"/></svg></div>
   </div>
   
   <script>
-    // Bulletproof Anti-Clipping Scaler
-    function resize() { 
-        const scale = Math.min(window.innerWidth / 800, window.innerHeight / 600);
-        document.getElementById('wrapper').style.transform = `scale(${scale})`; 
-    }
+    function resize() { document.getElementById('wrapper').style.transform = `scale(${Math.min(window.innerWidth / 800, window.innerHeight / 600)})`; }
     window.addEventListener('resize', resize); resize();
-
-    // JavaScript logic synced perfectly to the 8-second CSS loop
-    const btn = document.getElementById('saveBtn'); const toast = document.getElementById('toast'); const pill = document.getElementById('pill');
     
-    setInterval(() => {
-        // Trigger at exactly 40% (3200ms) - The moment the cursor clicks
-        setTimeout(() => { 
-            btn.innerHTML = "&#10003; Notes saved"; btn.style.background = "#15803d"; btn.style.color = "#fff"; btn.style.borderColor = "#15803d";
-            toast.style.opacity = "1"; toast.style.transform = "translateY(0)"; pill.style.background = "#15803d";
-        }, 3200); 
-        
-        // Reset at 85% (6800ms)
-        setTimeout(() => { 
-            btn.innerHTML = "Save notes"; btn.style.background = "#f59e0b"; btn.style.color = "#111"; btn.style.borderColor = "#f59e0b";
-            toast.style.opacity = "0"; toast.style.transform = "translateY(-10px)"; pill.style.background = "#2563eb";
-        }, 6800); 
-    }, 8000);
+    // Master Clock Trigger
+    window.addEventListener('load', () => { document.body.classList.add('sync'); });
   </script>
 </body>
 </html>
