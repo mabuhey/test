@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Saver Pro | Save Courses, Manuals, and Sites Offline</title>
+    <meta name="description" content="Save entire websites, courses, and manuals as one offline, searchable file. Features on-device video captions, automatic citations, and Markdown export for AI tools.">
+    
+    <!-- SEO & AIO (AI Optimization) Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Page Saver Pro",
+      "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+      "applicationCategory": "BrowserExtension",
+      "browserRequirements": "Requires Google Chrome, Microsoft Edge, Brave, or Opera",
+      "description": "A browser extension that saves a page, a whole section, or an entire website as one offline file — with no server, no AI calls, and no tracking. Features include Markdown for AI, automatic citations, and on-device video speech-to-text.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD",
+          "name": "Free Tier"
+        },
+        {
+          "@type": "Offer",
+          "price": "89.99",
+          "priceCurrency": "USD",
+          "name": "Lifetime License"
+        },
+        {
+          "@type": "Offer",
+          "name": "Annual Subscription",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "39.99",
+            "priceCurrency": "USD",
+            "billingDuration": "P1Y"
+          }
+        }
+      ],
+      "featureList": [
+        "Save 7,000+ page manuals into a single offline HTML file",
+        "Export whole sites to Markdown for ChatGPT and Claude",
+        "On-device machine-made captions for offline videos",
+        "Automatic APA, MLA, Harvard, Chicago, and AGLC4 citations",
+        "100% Private: No cloud, no accounts, no tracking"
+      ]
+    }
+    </script>
+
+    <!-- Compiled Tailwind CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans text-slate-900 bg-white antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-blue-700 rounded-md flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">Page Saver Pro</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Features</a>
+                    <a href="#ai-markdown" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Markdown for AI</a>
+                    <a href="#privacy" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Privacy</a>
+                    <a href="#pricing" class="bg-blue-700 hover:bg-blue-800 text-white px-5 py-2.5 rounded-lg font-bold shadow-lg shadow-blue-700/30 transition-all transform hover:-translate-y-0.5">Get Pro</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <a href="#features" class="block px-4 py-3 text-slate-600 hover:bg-slate-50">Features</a>
+            <a href="#ai-markdown" class="block px-4 py-3 text-slate-600 hover:bg-slate-50">Markdown for AI</a>
+            <a href="#pricing" class="block px-4 py-3 text-blue-700 font-bold hover:bg-slate-50">Get Pro</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Psychological Hook) -->
+    <header class="pt-28 pb-20 lg:pt-36 lg:pb-28 bg-gradient-to-br from-blue-800 to-blue-600 overflow-hidden relative">
+        <!-- Abstract Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-block mb-4 px-3 py-1 rounded-full bg-blue-900/50 border border-blue-400/30 text-blue-100 text-sm font-semibold tracking-wide">
+                Chrome • Edge • Brave • Opera
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto">
+                Keep every page that matters. <br><span class="text-amber-500">Forever.</span>
+            </h1>
+            <p class="mt-6 text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
+                Save full courses, whole websites, or 7,000-page manuals into one fast, searchable offline file. No cloud, no subscriptions, 100% private.
+            </p>
+            
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#pricing" class="bg-amber-500 hover:bg-amber-400 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-amber-500/20 transition-all transform hover:-translate-y-1 border-2 border-transparent">
+                    Get Lifetime License
+                </a>
+                <a href="#" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg backdrop-blur-sm border-2 border-white/30 transition-all">
+                    Try for Free
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-blue-200">Free forever for single pages. 3 free multi-page books.</p>
+        </div>
+    </header>
+
+    <!-- Social Proof / Agitation Section -->
+    <section class="py-12 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-lg font-medium text-slate-600">
+                Websites go down. Subscriptions expire. Bookmarks rot. <br class="hidden md:block">
+                <strong class="text-slate-900">Take permanent control of your research and study materials.</strong>
+            </p>
+        </div>
+    </section>
+
+  <!-- Features Grid (AIO Structured & Video Enhanced - Magnified Layout) -->
+<!-- Features Grid (Apple-Style Fluid Responsive Grid) -->
+    <section id="features" class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">The ultimate offline reader and research engine.</h2>
+                <p class="mt-4 text-lg md:text-xl text-slate-600">Not just a "Save As" button. Page Saver Pro crawls, compiles, and organizes entire sites into a clean, searchable format.</p>
+            </div>
+
+            <!-- Responsive 2-Column Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+                
+                <!-- Feature 1: Whole Book PDF -->
+                <div class="bg-slate-50 rounded-2xl md:rounded-3xl border border-slate-200 hover:border-blue-700 transition-all duration-300 overflow-hidden flex flex-col shadow-sm hover:shadow-xl group">
+                    <figure class="w-full aspect-[4/3] bg-white border-b border-slate-200 relative overflow-hidden">
+                        <iframe src="anim2.html?v=9" class="absolute inset-0 w-full h-full border-none pointer-events-none" title="Whole book PDF animation" aria-hidden="true" scrolling="no"></iframe>
+                    </figure>
+                    <div class="p-6 lg:p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Save thousands of pages as one book.</h3>
+                        <p class="text-slate-600 text-sm lg:text-base leading-relaxed mb-6">Follows the site’s own table of contents. Keeps pages in real order with a collapsible tree. Search across thousands of pages instantly. Built-in memory guards ensure your browser never crashes. Plus, export your entire saved book into one bookmarked, paginated PDF with a table of contents and page numbers.</p>
+                        <ul class="text-xs lg:text-sm font-medium text-slate-900 flex flex-wrap gap-3 mt-auto">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Virtualized rendering for extreme speed</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Resume interrupted saves seamlessly</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 2: On-Device Captions -->
+                <div class="bg-slate-50 rounded-2xl md:rounded-3xl border border-slate-200 hover:border-blue-700 transition-all duration-300 overflow-hidden flex flex-col shadow-sm hover:shadow-xl group">
+                    <figure class="w-full aspect-[4/3] bg-white border-b border-slate-200 relative overflow-hidden">
+                        <iframe src="anim4.html?v=9" class="absolute inset-0 w-full h-full border-none pointer-events-none" title="On-device captions animation" aria-hidden="true" scrolling="no"></iframe>
+                    </figure>
+                    <div class="p-6 lg:p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Offline Video & Machine-Made Captions.</h3>
+                        <p class="text-slate-600 text-sm lg:text-base leading-relaxed mb-6">Downloads embedded lecture videos and audio right into your saved page. Don't have captions? Our on-device Speech-to-Text engine generates accurate, searchable transcripts entirely on your computer.</p>
+                        <ul class="text-xs lg:text-sm font-medium text-slate-900 flex flex-wrap gap-3 mt-auto">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Converts streaming HLS to MP4</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> 100% Local AI. No cloud uploads.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Silent Save Notes -->
+                <div class="bg-slate-50 rounded-2xl md:rounded-3xl border border-slate-200 hover:border-blue-700 transition-all duration-300 overflow-hidden flex flex-col shadow-sm hover:shadow-xl group">
+                    <figure class="w-full aspect-[4/3] bg-white border-b border-slate-200 relative overflow-hidden">
+                        <iframe src="anim1.html?v=9" class="absolute inset-0 w-full h-full border-none pointer-events-none" title="Silent save notes animation" aria-hidden="true" scrolling="no"></iframe>
+                    </figure>
+                    <div class="p-6 lg:p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Annotate, Highlight, and Cite.</h3>
+                        <p class="text-slate-600 text-sm lg:text-base leading-relaxed mb-6">Highlight in 6 colors, underline, and write notes. Your notes are written permanently into the saved file itself via a one-click silent "Save notes" button—no save dialogs and no pop-ups. Generate instant citations for any saved page.</p>
+                        <ul class="text-xs lg:text-sm font-medium text-slate-900 flex flex-wrap gap-3 mt-auto">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> APA 7, MLA 9, Harvard, Chicago 17, AGLC4</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Searchable notes show in contents tree</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Markdown for AI -->
+                <div id="ai-markdown" class="bg-blue-50 rounded-2xl md:rounded-3xl border-2 border-blue-700 relative overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-all duration-300 group">
+                    <div class="absolute top-0 right-0 bg-blue-700 text-white text-xs font-bold px-3 py-2 md:px-4 md:py-2 rounded-bl-xl uppercase tracking-wider z-20">Unfair Advantage</div>
+                    <figure class="w-full aspect-[4/3] bg-white border-b border-blue-200 relative overflow-hidden z-10">
+                        <iframe src="anim3.html?v=9" class="absolute inset-0 w-full h-full border-none pointer-events-none" title="Markdown export animation" aria-hidden="true" scrolling="no"></iframe>
+                    </figure>
+                    <div class="p-6 lg:p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Markdown export for AI tools.</h3>
+                        <p class="text-slate-700 text-sm lg:text-base leading-relaxed mb-6">Feed entire websites into ChatGPT, Claude, or NotebookLM. We extract pages, attached PDFs, Word docs, and video transcripts into perfectly structured Markdown files automatically split to stay under AI size limits.</p>
+                        <ul class="text-xs lg:text-sm font-bold text-blue-800 flex flex-wrap gap-3 mt-auto">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Perfect for Notion, Obsidian, and LLMs</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Reads text directly out of attached PDFs</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <!-- Privacy & Security Guarantee -->
+    <section id="privacy" class="py-16 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <svg class="w-12 h-12 text-amber-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            <h2 class="text-3xl font-bold mb-4">What happens on your computer, stays on your computer.</h2>
+            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                We believe your research is yours. Page Saver Pro has no accounts, no tracking, and no servers. All processing, including video transcription and Markdown generation, happens entirely on your local CPU.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-semibold text-slate-300">
+                <span class="bg-slate-800 px-4 py-2 rounded-full border border-slate-700">✓ Fully Audited Codebase</span>
+                <span class="bg-slate-800 px-4 py-2 rounded-full border border-slate-700">✓ No Third-Party Analytics</span>
+                <span class="bg-slate-800 px-4 py-2 rounded-full border border-slate-700">✓ Chrome Web Store Compliant</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Stop renting your tools. Pay once.</h2>
+                <p class="mt-4 text-lg text-slate-600">Choose the plan that fits your workflow. 14-Day money-back guarantee.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-center">
+                
+                <!-- Free Tier -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900">Free</h3>
+                    <p class="text-slate-600 mt-2 text-sm">For casual clipping.</p>
+                    <div class="my-6">
+                        <span class="text-4xl font-extrabold text-slate-900">$0</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> 20 single-page saves</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> 3 multi-page book saves</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Automatic Citations</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Built-in Library</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Save as PDF</li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-900 font-bold text-center rounded-xl transition-colors">Add to Chrome</a>
+                </div>
+
+                <!-- Lifetime License (The Anchor/Highlight) -->
+                <div class="bg-blue-700 p-8 rounded-2xl border-2 border-blue-400 shadow-2xl transform md:-translate-y-4 relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-slate-900 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">Most Popular</div>
+                    <h3 class="text-xl font-bold text-white">Lifetime Pro</h3>
+                    <p class="text-blue-200 mt-2 text-sm">Pay once. Own it forever.</p>
+                    <div class="my-6">
+                        <div>
+                            <span class="text-4xl font-extrabold text-white">$89.99</span>
+                            <span class="text-blue-200">/one-time</span>
+                        </div>
+                        <p class="text-blue-200 text-sm mt-1">One computer &middot; lifetime</p>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-blue-50 font-medium">
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Unlimited single & multi-page books</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Whole-site ZIP crawling</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Markdown export for AI / Obsidian</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> On-Device Video Speech-to-Text</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> In-file Highlighting & Annotations</li>
+                    </ul>
+                    <a href="#" class="block w-full py-4 px-4 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold text-center rounded-xl transition-all shadow-lg transform hover:-translate-y-0.5">Get Lifetime License</a>
+                    <p class="text-center text-xs text-blue-200 mt-4">14-Day Money-Back Guarantee</p>
+                </div>
+
+                <!-- Annual Subscription -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900">Annual Pro</h3>
+                    <p class="text-slate-600 mt-2 text-sm">For short-term projects.</p>
+                    <div class="my-6">
+                        <span class="text-4xl font-extrabold text-slate-900">$39.99</span>
+                        <span class="text-slate-500">/year</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> All Pro Features Included</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Billed annually</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Cancel anytime</li>
+                    </ul>
+                    <a href="#" class="block w-full py-3 px-4 bg-white border-2 border-blue-700 text-blue-700 hover:bg-blue-50 font-bold text-center rounded-xl transition-colors">Subscribe Annually</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-slate-200 rounded-lg">
+                    <button class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                        <span>How does the "Markdown for AI" feature work?</span>
+                        <svg class="w-5 h-5 text-blue-700 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        Page Saver Pro crawls your saved book (including attached PDFs, Word docs, and video transcripts) and structures it into perfectly formatted Markdown files. If a site is massive, it automatically splits the files to stay under the token limits of ChatGPT, Claude, or NotebookLM. Everything runs securely on your computer.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-slate-200 rounded-lg">
+                    <button class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                        <span>Can I save Canvas, Blackboard, or LMS course videos?</span>
+                        <svg class="w-5 h-5 text-blue-700 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        Yes. Because Page Saver Pro uses your active browser session, it can save pages and embedded videos you are currently logged into. It converts HLS streams to standard MP4 files. Note: We do not bypass DRM (like Netflix) or download YouTube videos, per Chrome Store policies.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-slate-200 rounded-lg">
+                    <button class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                        <span>What exactly does "Lifetime License" mean?</span>
+                        <svg class="w-5 h-5 text-blue-700 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        Your lifetime licence activates Pro features on one computer. Need it on a second machine? The annual plan at US$39.99/year covers you while you need it, or a second lifetime licence is US$89.99.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-slate-200 rounded-lg">
+                    <button class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center focus:outline-none">
+                        <span>Where are my notes and highlights saved?</span>
+                        <svg class="w-5 h-5 text-blue-700 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        Your notes are injected directly into the saved HTML file on your hard drive via a secure 1-click save process. They never touch a cloud server. If you send the file to a colleague, your notes go with it. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 bg-slate-700 rounded-md flex items-center justify-center">
+                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+                    </div>
+                    <span class="font-bold text-slate-300">Page Saver Pro</span>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="hover:text-white transition-colors">User Manual</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="eula.html" class="hover:text-white transition-colors">EULA</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+            <div class="mt-8 text-center md:text-left text-xs text-slate-600">
+                &copy; 2026 Page Saver Pro. All rights reserved. <br>
+                Chrome, Edge, Brave, Opera, and Safari are trademarks of their respective owners.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lean, Vanilla JS for Interactions (Zero Dependencies) -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // FAQ Accordion Logic
+        const faqButtons = document.querySelectorAll('.faq-btn');
+        
+        faqButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('svg');
+                
+                // Toggle current
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+    </script>
+</body>
+</html>
