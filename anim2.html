@@ -25,16 +25,22 @@
   .cursor { position: absolute; width: 36px; height: 54px; z-index: 1000; top: 0; left: 0; transform: translate(750px, 550px); }
   .cursor svg { transform: scale(1); }
 
-  /* Synchronized Keyframes */
+  /* Smooth Interpolated Keyframes */
   @keyframes cursorAnim { 0% { transform: translate(750px, 550px); } 15%, 25% { transform: translate(154px, 182px); } 35%, 80% { transform: translate(302px, 260px); } 100% { transform: translate(750px, 550px); } }
   @keyframes clickAnim { 0%, 18%, 22%, 38%, 42%, 100% { transform: scale(1); } 20%, 40% { transform: scale(0.85); } }
+  
   @keyframes checkBg { 0%, 19.9% { background: #fff; border-color: #cbd5e1; } 20%, 89.9% { background: #2563eb; border-color: #2563eb; } 90%, 100% { background: #fff; border-color: #cbd5e1; } }
   @keyframes checkMark { 0%, 19.9% { content: ""; } 20%, 89.9% { content: "\2713"; } 90%, 100% { content: ""; } }
   @keyframes btnBg { 0%, 39.9% { background: #2563eb; } 40%, 89.9% { background: #15803d; } 90%, 100% { background: #2563eb; } }
-  @keyframes doc1Anim { 0%, 39.9% { opacity: 0; transform: translate(-100px, -30px); } 40%, 46.5% { opacity: 1; transform: translate(0, 0); } 46.6%, 100% { opacity: 0; transform: translate(0,0); } }
-  @keyframes doc2Anim { 0%, 39.9% { opacity: 0; transform: translate(100px, -15px); } 40%, 46.5% { opacity: 1; transform: translate(0, 0); } 46.6%, 100% { opacity: 0; transform: translate(0,0); } }
-  @keyframes doc3Anim { 0%, 39.9% { opacity: 0; transform: translate(0px, 70px); } 40%, 46.5% { opacity: 1; transform: translate(0, 0); } 46.6%, 100% { opacity: 0; transform: translate(0,0); } }
-  @keyframes pdfBadge { 0%, 46.5% { opacity: 0; transform: scale(0.8); } 46.6%, 51.5% { opacity: 1; transform: scale(1.1); } 51.6%, 89.9% { opacity: 1; transform: scale(1); } 90%, 100% { opacity: 0; transform: scale(0.8); } }
+  
+  /* Fluid Sliding Docs */
+  @keyframes doc1Anim { 0%, 39.9% { opacity: 0; transform: translate(-100px, -30px); } 40% { opacity: 0; transform: translate(-100px, -30px); animation-timing-function: ease-out; } 46.7% { opacity: 1; transform: translate(0, 0); } 46.8%, 100% { opacity: 0; transform: translate(0,0); } }
+  @keyframes doc2Anim { 0%, 39.9% { opacity: 0; transform: translate(100px, -15px); } 40% { opacity: 0; transform: translate(100px, -15px); animation-timing-function: ease-out; } 46.7% { opacity: 1; transform: translate(0, 0); } 46.8%, 100% { opacity: 0; transform: translate(0,0); } }
+  @keyframes doc3Anim { 0%, 39.9% { opacity: 0; transform: translate(0px, 70px); } 40% { opacity: 0; transform: translate(0px, 70px); animation-timing-function: ease-out; } 46.7% { opacity: 1; transform: translate(0, 0); } 46.8%, 100% { opacity: 0; transform: translate(0,0); } }
+  
+  /* Fluid Scaled PDF Pop */
+  @keyframes pdfBadge { 0%, 46.6% { opacity: 0; transform: scale(0.8); } 46.7% { opacity: 0; transform: scale(0.8); animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); } 48% { opacity: 1; } 51.7% { opacity: 1; transform: scale(1.1); animation-timing-function: ease-in-out; } 56.7%, 89.9% { opacity: 1; transform: scale(1); } 90%, 100% { opacity: 0; transform: scale(0.8); } }
+  
   @keyframes pillColor { 0%, 46.5% { background: #2563eb; } 46.6%, 89.9% { background: #15803d; } 90%, 100% { background: #2563eb; } }
 
   body.sync .cursor { animation: cursorAnim 6s infinite ease-in-out; } 
