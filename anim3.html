@@ -25,13 +25,33 @@
   .cursor { position: absolute; width: 36px; height: 54px; z-index: 1000; top: 0; left: 0; transform: translate(750px, 550px); }
   .cursor svg { transform: scale(1); }
 
-  /* Synchronized Keyframes */
+  /* Fluid Keyframes */
   @keyframes cursorAnim { 0% { transform: translate(750px, 550px); } 20%, 80% { transform: translate(580px, 115px); } 100% { transform: translate(750px, 550px); } }
   @keyframes clickAnim { 0%, 23%, 28%, 100% { transform: scale(1); } 25% { transform: scale(0.85); } }
+  
   @keyframes mdBtnColor { 0%, 24.9% { background: #2563eb; border-color: #2563eb; color: #fff; } 25%, 89.9% { background: #15803d; border-color: #15803d; color: #fff; } 90%, 100% { background: #2563eb; border-color: #2563eb; color: #fff; } }
-  @keyframes fileAnim { 0%, 24.9% { opacity: 0; transform: translateX(0) scale(1); background: #f8fafc; border-color: #cbd5e1; color: #64748b; } 25%, 36.5% { opacity: 1; transform: translateX(0) scale(1); background: #f8fafc; border-color: #cbd5e1; color: #64748b; } 36.6%, 53.2% { opacity: 1; transform: translateX(0) scale(1); background: #0f172a; border-color: #0f172a; color: #fff; } 53.3%, 59.9% { opacity: 1; transform: translateX(240px) scale(0.6); background: #0f172a; border-color: #0f172a; color: #fff; } 60%, 100% { opacity: 0; transform: translateX(240px) scale(0.6); background: #0f172a; border-color: #0f172a; color: #fff; } }
-  @keyframes fileText { 0%, 36.5% { content: "HTML"; } 36.6%, 100% { content: ".md"; } }
-  @keyframes aiAnim { 0%, 24.9% { opacity: 0; transform: scale(0.8); background: #f3f4f6; border-color: #94a3b8; } 25%, 59.9% { opacity: 1; transform: scale(1); background: #f3f4f6; border-color: #94a3b8; } 60%, 89.9% { opacity: 1; transform: scale(1); background: #2563eb; border-color: #2563eb; } 90%, 100% { opacity: 0; transform: scale(0.8); background: #2563eb; border-color: #2563eb; } }
+  
+  /* Smooth Morph & Slide */
+  @keyframes fileAnim { 
+      0%, 24.9% { opacity: 0; transform: translateX(0) scale(1); background: #f8fafc; border-color: #cbd5e1; color: #64748b; } 
+      25% { opacity: 0; transform: translateX(0) scale(1); background: #f8fafc; border-color: #cbd5e1; color: #64748b; animation-timing-function: ease-out; } 
+      30%, 36.5% { opacity: 1; transform: translateX(0) scale(1); background: #f8fafc; border-color: #cbd5e1; color: #64748b; } 
+      36.6% { opacity: 1; transform: translateX(0) scale(1); background: #f8fafc; border-color: #cbd5e1; color: #64748b; animation-timing-function: ease-in-out; } 
+      41.6%, 53.2% { opacity: 1; transform: translateX(0) scale(1); background: #0f172a; border-color: #0f172a; color: #fff; } 
+      53.3% { opacity: 1; transform: translateX(0) scale(1); background: #0f172a; border-color: #0f172a; color: #fff; animation-timing-function: ease-in-out; } 
+      60% { opacity: 1; transform: translateX(240px) scale(0.6); background: #0f172a; border-color: #0f172a; color: #fff; } 
+      60.1%, 100% { opacity: 0; transform: translateX(240px) scale(0.6); background: #0f172a; border-color: #0f172a; color: #fff; } 
+  }
+  @keyframes fileText { 0%, 39.9% { content: "HTML"; } 40%, 100% { content: ".md"; } }
+  
+  @keyframes aiAnim { 
+      0%, 24.9% { opacity: 0; transform: scale(0.8); background: #f3f4f6; border-color: #94a3b8; } 
+      25% { opacity: 0; transform: scale(0.8); background: #f3f4f6; border-color: #94a3b8; animation-timing-function: ease-out; } 
+      31.6%, 59.9% { opacity: 1; transform: scale(1); background: #f3f4f6; border-color: #94a3b8; } 
+      60%, 89.9% { opacity: 1; transform: scale(1); background: #2563eb; border-color: #2563eb; } 
+      90%, 100% { opacity: 0; transform: scale(0.8); background: #2563eb; border-color: #2563eb; } 
+  }
+  
   @keyframes sparkleAnim { 0%, 59.9% { opacity: 1; color: #64748b; } 60%, 100% { opacity: 0; color: #64748b; } }
   @keyframes brainAnim { 0%, 59.9% { opacity: 0; color: #fff; } 60%, 100% { opacity: 1; color: #fff; } }
   @keyframes pillColor { 0%, 59.9% { background: #2563eb; } 60%, 89.9% { background: #15803d; } 90%, 100% { background: #2563eb; } }
@@ -60,7 +80,7 @@
           <svg class="svg-icon svg-brain" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
         </div>
     </div>
-    <div class="pill">One file. Paste it straight into your own AI.</div>
+    <div class="pill">One file. Paste it straight into AI.</div>
     <div class="cursor"><svg viewBox="0 0 24 36" fill="none"><path d="M0 0L0 25.4L7 19.3L11.4 28L15.9 26L11.5 17.5L19.7 17.5L0 0Z" fill="#0f172a" stroke="white" stroke-width="1.5"/></svg></div>
   </div>
   <script>
