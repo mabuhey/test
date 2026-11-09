@@ -16,7 +16,7 @@
   .stage { position: absolute; top: 240px; left: 220px; width: 400px; height: 160px; z-index: 5; }
   
   /* Vertical Stack Mini-Docs (Centered to the file-icon's coordinates) */
-  .mini-doc { position: absolute; left: 33px; top: 47px; width: 44px; height: 56px; background: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; box-shadow: 0 4px 12px rgba(15,23,42,0.1); z-index: 12; opacity: 0; }
+  .mini-doc { position: absolute; left: 5px; top: 47px; width: 44px; height: 66px; background: #fff; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; box-shadow: 0 4px 12px rgba(15,23,42,0.1); z-index: 12; opacity: 0; }
   .mini-pdf { border: 2px solid #dc2626; color: #dc2626; }
   .mini-doc-file { border: 2px solid #2563eb; color: #2563eb; }
   .mini-txt { border: 2px solid #15803d; color: #15803d; } /* Updated CC to TXT */
@@ -43,19 +43,19 @@
   
   /* Fluid, slower vacuum sequence for the mini docs */
   @keyframes mPdf {
-      0%, 5% { opacity: 0; transform: translate(-120px, -75px); }
+      0%, 5% { opacity: 0; transform: translate(-195px, -75px); }
       12%, 25% { opacity: 1; transform: translate(-90px, -75px) scale(1); animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1); }
       33% { opacity: 0; transform: translate(0px, 0px) scale(0); }
       34%, 100% { opacity: 0; transform: translate(0,0) scale(0); }
   }
   @keyframes mDoc {
-      0%, 5% { opacity: 0; transform: translate(-120px, 0px); }
+      0%, 5% { opacity: 0; transform: translate(-195px, 0px); }
       12%, 25% { opacity: 1; transform: translate(-90px, 0px) scale(1); animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1); }
       33% { opacity: 0; transform: translate(0px, 0px) scale(0); }
       34%, 100% { opacity: 0; transform: translate(0,0) scale(0); }
   }
   @keyframes mTxt {
-      0%, 5% { opacity: 0; transform: translate(-120px, 75px); }
+      0%, 5% { opacity: 0; transform: translate(-195px, 75px); }
       12%, 25% { opacity: 1; transform: translate(-90px, 75px) scale(1); animation-timing-function: cubic-bezier(0.5, 0, 0.2, 1); }
       33% { opacity: 0; transform: translate(0px, 0px) scale(0); }
       34%, 100% { opacity: 0; transform: translate(0,0) scale(0); }
