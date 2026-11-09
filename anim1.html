@@ -25,35 +25,32 @@
   
   .hl { background-image: linear-gradient(to right, #fde047 50%, transparent 50%); background-size: 200% 100%; color: #000; border-radius: 4px; padding: 2px 0; background-position: 100% 0; }
   
-  /* Synchronized Keyframes (8s Loop) - Custom Bezier physics for fluid, non-stop line transitions */
+  /* Synchronized Keyframes (8s Loop) - Corrected for fluid, bounce-free motion */
   @keyframes cursorAnim { 
       0%, 4% { transform: translate(750px, 550px); animation-timing-function: ease-in-out; } 
-      10%, 12% { transform: translate(555px, 318px); animation-timing-function: ease-in; } /* Accelerate into highlight */
+      10%, 12% { transform: translate(555px, 318px); animation-timing-function: linear; } 
+      18% { transform: translate(685px, 318px); animation-timing-function: ease-in-out; } /* Graceful deceleration at end of Line 1 */
       
-      /* The Continuous Sweep Segment: Linear timing forces the cursor to NEVER stop at these waypoints */
-      17% { transform: translate(685px, 318px); animation-timing-function: linear; } /* End of line 1 */
-      22% { transform: translate(350px, 345px); animation-timing-function: linear; } /* Wide, slow arc down */
-      27% { transform: translate(100px, 358px); animation-timing-function: linear; } /* Start of line 2 */
+      /* Slow, perfectly straight, incredibly smooth glide to Line 2 */
+      27% { transform: translate(100px, 358px); animation-timing-function: ease-in; } /* Soft landing at start of Line 2 */
       
-      38% { transform: translate(600px, 358px); animation-timing-function: ease-out; } /* Ease to a halt at the end of line 2 */
-      40% { transform: translate(600px, 358px); animation-timing-function: ease-in-out; } /* Pause briefly */
-      45%, 85% { transform: translate(510px, 190px); animation-timing-function: ease-in-out; } /* Move to button */
+      38% { transform: translate(600px, 358px); animation-timing-function: ease-out; } 
+      40% { transform: translate(600px, 358px); animation-timing-function: ease-in-out; } 
+      45%, 85% { transform: translate(510px, 190px); animation-timing-function: ease-in-out; } 
       95%, 100% { transform: translate(750px, 550px); animation-timing-function: ease-in-out; } 
   }
   
   @keyframes clickAnim { 0%, 43%, 48%, 100% { transform: scale(1); } 45% { transform: scale(0.85); } }
   
-  /* Highlight Sweeps Synced to the Exact Millisecond of the Cursor */
   @keyframes hl1Anim { 
-      0%, 12% { background-position: 100% 0; animation-timing-function: ease-in; } 
-      17%, 90% { background-position: 0% 0; } 
+      0%, 12% { background-position: 100% 0; animation-timing-function: linear; } 
+      18%, 90% { background-position: 0% 0; } 
       100% { background-position: 100% 0; } 
   }
   
   @keyframes hl2Anim { 
-      0%, 27% { background-position: 100% 0; animation-timing-function: linear; } 
-      38% { background-position: 0% 0; animation-timing-function: ease-out; } 
-      39%, 90% { background-position: 0% 0; } 
+      0%, 27% { background-position: 100% 0; animation-timing-function: ease-out; } 
+      38%, 90% { background-position: 0% 0; } 
       100% { background-position: 100% 0; } 
   }
 
