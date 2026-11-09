@@ -25,21 +25,49 @@
   
   .hl { background-image: linear-gradient(to right, #fde047 50%, transparent 50%); background-size: 200% 100%; color: #000; border-radius: 4px; padding: 2px 0; background-position: 100% 0; }
   
-  /* Synchronized Keyframes */
-  @keyframes cursorAnim { 0%, 4% { transform: translate(750px, 550px); } 10%, 12% { transform: translate(555px, 318px); } 15% { transform: translate(685px, 318px); } 17% { transform: translate(100px, 358px); } 28% { transform: translate(600px, 358px); } 35%, 85% { transform: translate(510px, 190px); } 95%, 100% { transform: translate(750px, 550px); } }
-  @keyframes clickAnim { 0%, 38%, 43%, 100% { transform: scale(1); } 40% { transform: scale(0.85); } }
-  @keyframes hl1Anim { 0%, 12% { background-position: 100% 0; } 15%, 90% { background-position: 0% 0; } 100% { background-position: 100% 0; } }
-  @keyframes hl2Anim { 0%, 17% { background-position: 100% 0; } 28%, 90% { background-position: 0% 0; } 100% { background-position: 100% 0; } }
-  @keyframes btnColorAnim { 0%, 39.9% { background: #f59e0b; color: #111; border-color: #f59e0b; } 40%, 84.9% { background: #15803d; color: #fff; border-color: #15803d; } 85%, 100% { background: #f59e0b; color: #111; border-color: #f59e0b; } }
-  @keyframes btnTextAnim { 0%, 39.9% { content: "Save notes"; } 40%, 84.9% { content: "✓ Notes saved"; } 85%, 100% { content: "Save notes"; } }
-  @keyframes toastAnim { 0%, 39.9% { opacity: 0; transform: translateY(-10px); } 40%, 84.9% { opacity: 1; transform: translateY(0); } 85%, 100% { opacity: 0; transform: translateY(-10px); } }
-  @keyframes pillColorAnim { 0%, 39.9% { background: #2563eb; } 40%, 84.9% { background: #15803d; } 85%, 100% { background: #2563eb; } }
+  /* Synchronized Keyframes (8s Loop) - Custom Bezier physics for fluid, non-stop line transitions */
+  @keyframes cursorAnim { 
+      0%, 4% { transform: translate(750px, 550px); animation-timing-function: ease-in-out; } 
+      10%, 12% { transform: translate(555px, 318px); animation-timing-function: ease-in; } /* Accelerate into highlight */
+      
+      /* The Continuous Sweep Segment: Linear timing forces the cursor to NEVER stop at these waypoints */
+      17% { transform: translate(685px, 318px); animation-timing-function: linear; } /* End of line 1 */
+      22% { transform: translate(350px, 345px); animation-timing-function: linear; } /* Wide, slow arc down */
+      27% { transform: translate(100px, 358px); animation-timing-function: linear; } /* Start of line 2 */
+      
+      38% { transform: translate(600px, 358px); animation-timing-function: ease-out; } /* Ease to a halt at the end of line 2 */
+      40% { transform: translate(600px, 358px); animation-timing-function: ease-in-out; } /* Pause briefly */
+      45%, 85% { transform: translate(510px, 190px); animation-timing-function: ease-in-out; } /* Move to button */
+      95%, 100% { transform: translate(750px, 550px); animation-timing-function: ease-in-out; } 
+  }
+  
+  @keyframes clickAnim { 0%, 43%, 48%, 100% { transform: scale(1); } 45% { transform: scale(0.85); } }
+  
+  /* Highlight Sweeps Synced to the Exact Millisecond of the Cursor */
+  @keyframes hl1Anim { 
+      0%, 12% { background-position: 100% 0; animation-timing-function: ease-in; } 
+      17%, 90% { background-position: 0% 0; } 
+      100% { background-position: 100% 0; } 
+  }
+  
+  @keyframes hl2Anim { 
+      0%, 27% { background-position: 100% 0; animation-timing-function: linear; } 
+      38% { background-position: 0% 0; animation-timing-function: ease-out; } 
+      39%, 90% { background-position: 0% 0; } 
+      100% { background-position: 100% 0; } 
+  }
+
+  /* UI State Changes synced to 45% (3.6s) Click */
+  @keyframes btnColorAnim { 0%, 44.9% { background: #f59e0b; color: #111; border-color: #f59e0b; } 45%, 84.9% { background: #15803d; color: #fff; border-color: #15803d; } 85%, 100% { background: #f59e0b; color: #111; border-color: #f59e0b; } }
+  @keyframes btnTextAnim { 0%, 44.9% { content: "Save notes"; } 45%, 84.9% { content: "✓ Notes saved"; } 85%, 100% { content: "Save notes"; } }
+  @keyframes toastAnim { 0%, 44.9% { opacity: 0; transform: translateY(-10px); } 45%, 84.9% { opacity: 1; transform: translateY(0); } 85%, 100% { opacity: 0; transform: translateY(-10px); } }
+  @keyframes pillColorAnim { 0%, 44.9% { background: #2563eb; } 45%, 84.9% { background: #15803d; } 85%, 100% { background: #2563eb; } }
 
   /* Activated only when 'sync' class is applied */
-  body.sync .cursor { animation: cursorAnim 8s infinite ease-in-out; }
+  body.sync .cursor { animation: cursorAnim 8s infinite; }
   body.sync .cursor svg { animation: clickAnim 8s infinite; }
-  body.sync .hl1 { animation: hl1Anim 8s infinite ease-out; }
-  body.sync .hl2 { animation: hl2Anim 8s infinite ease-out; }
+  body.sync .hl1 { animation: hl1Anim 8s infinite; }
+  body.sync .hl2 { animation: hl2Anim 8s infinite; }
   body.sync .btn-save { animation: btnColorAnim 8s infinite; }
   body.sync .btn-save::after { animation: btnTextAnim 8s infinite; }
   body.sync .toast { animation: toastAnim 8s infinite; }
@@ -48,7 +76,7 @@
 </head>
 <body>
   <div id="wrapper">
-    <div class="toast">Your saved book has been updated with your latest annotations.</div>
+    <div class="toast" id="toast">Your saved book has been updated with your latest annotations.</div>
     <div class="toolbar-bg"></div>
     <div class="btn btn-notes">My notes (6)</div>
     <div class="btn btn-save"></div>
