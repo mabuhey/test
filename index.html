@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nesaron Page Saver: Save Web Pages &amp; Whole Websites Offline</title>
+    <meta name="description" content="Save web pages and whole sites as one offline, searchable book. Highlight, add notes and draft citations. Your private library.">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta property="og:title" content="Nesaron Page Saver: Save Web Pages &amp; Whole Websites Offline">
+    <meta property="og:description" content="Save web pages and whole sites as one offline, searchable book. Highlight, add notes and draft citations. Your private library.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Nesaron">
+    <meta name="theme-color" content="#1d4ed8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "#nesaron",
+          "name": "Nesaron",
+          "slogan": "Keep what matters."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Nesaron Page Saver",
+          "publisher": { "@id": "#nesaron" },
+          "applicationCategory": "BrowserApplication",
+          "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+          "browserRequirements": "Requires Google Chrome",
+          "description": "Save web pages and whole sites as one offline, searchable book. Highlight, add notes and draft citations. Your private library.",
+          "offers": [
+            { "@type": "Offer", "name": "Free trial", "price": "0", "priceCurrency": "USD", "description": "20 single-page saves and 3 multi-page saves. Draft citations are free in every plan." },
+            { "@type": "Offer", "name": "Lifetime licence", "price": "89.99", "priceCurrency": "USD", "description": "One payment for one computer." },
+            { "@type": "Offer", "name": "Yearly plan", "priceCurrency": "USD", "description": "Every feature on one computer while the plan is active.", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "39.99", "priceCurrency": "USD", "billingDuration": "P1Y" } }
+          ],
+          "featureList": [
+            "Save one page, or many pages of a website, as one offline, searchable book",
+            "Highlights and notes saved inside the file",
+            "Draft citations in APA 7, MLA 9, Harvard, Chicago 17 and AGLC4",
+            "One PDF of a whole book with contents, bookmarks and page numbers",
+            "Markdown files for your own AI tools and note apps",
+            "Machine-made captions for saved videos, made on your computer",
+            "No account, no tracking, no servers"
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans text-slate-900 bg-white antialiased selection:bg-amber-500 selection:text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white border-b border-slate-200" aria-label="Main">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center" aria-label="Nesaron Page Saver home">
+                    <img src="images/nesaron-logo-light.svg" alt="Nesaron Page Saver" width="173" height="44" class="h-11 w-auto">
+                </a>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Features</a>
+                    <a href="#ai-markdown" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Markdown for AI</a>
+                    <a href="#privacy" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">Privacy</a>
+                    <a href="#faq" class="text-slate-600 hover:text-blue-700 font-medium transition-colors">FAQ</a>
+                    <a href="#pricing" class="bg-blue-700 hover:bg-blue-800 text-white px-5 py-2.5 rounded-lg font-bold shadow-lg shadow-blue-700/30 transition-all">Pricing</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-600 hover:text-slate-900 p-2" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <a href="#features" class="block px-4 py-3 text-slate-600 hover:bg-slate-50">Features</a>
+            <a href="#ai-markdown" class="block px-4 py-3 text-slate-600 hover:bg-slate-50">Markdown for AI</a>
+            <a href="#privacy" class="block px-4 py-3 text-slate-600 hover:bg-slate-50">Privacy</a>
+            <a href="#faq" class="block px-4 py-3 text-slate-600 hover:bg-slate-50">FAQ</a>
+            <a href="#pricing" class="block px-4 py-3 text-blue-700 font-bold hover:bg-slate-50">Pricing</a>
+        </div>
+    </nav>
+
+    <main>
+    <!-- Hero -->
+    <header class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-blue-800 to-blue-600 overflow-hidden relative">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <p class="inline-block mb-5 px-4 py-1.5 rounded-full bg-slate-900/60 border border-blue-100/30 text-blue-100 text-sm font-semibold tracking-wide">
+                A browser extension for Google Chrome
+            </p>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-6xl mx-auto">
+                Turn any website into one offline book.
+            </h1>
+            <p class="mt-6 text-xl text-white max-w-2xl mx-auto leading-relaxed">
+              Save a single webpage or thousands into one book you can browse offline. Highlight it, add notes, copy draft citations and more.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#pricing" class="bg-amber-500 hover:bg-amber-400 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-amber-500/20 border-2 border-transparent transition-all">
+                    See the plans
+                </a>
+                <a href="#features" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg border-2 border-white/40 transition-all">
+                    See what it does
+                </a>
+            </div>
+            <p class="mt-5 text-base text-white">Coming soon to the Chrome Web Store. Free to try: 20 single-page saves and 3 multi-page saves.</p>
+        </div>
+    </header>
+
+    <!-- Why -->
+    <section class="py-12 bg-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-lg font-medium text-slate-600">
+                Webpages move. Websites go down. Links break. <br class="hidden md:block">
+                <strong class="text-slate-900">Keep a copy of a website. <span class="bg-amber-500 text-slate-900 px-2 py-0.5 rounded-md">Yours to keep.</span></strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-12 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Your own offline library, made from the web.</h2>
+                <p class="mt-4 text-lg md:text-xl text-slate-600">More than a "Save As" button. Nesaron Page Saver follows a site's own contents, saves the pages in order and puts them together as one clean book you can search.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+
+                <!-- Feature 1: Books and PDF -->
+                <article class="bg-slate-50 rounded-2xl md:rounded-3xl border border-slate-200 hover:border-blue-700 transition-all duration-300 overflow-hidden flex flex-col shadow-sm hover:shadow-xl">
+                    <figure class="w-full aspect-[4/3] bg-white border-b border-slate-200 relative overflow-hidden">
+                        <iframe src="anim2.html?v=13" class="absolute inset-0 w-full h-full border-none pointer-events-none" title="Animation: many pages become one PDF" aria-hidden="true" tabindex="-1" scrolling="no"></iframe>
+                    </figure>
+                    <div class="p-6 lg:p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Save hundreds or thousands of pages as one book.</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-6">When the site has its own table of contents, it reads it and keeps the pages in that order, in a contents tree you can fold. Search every page at once. If your computer runs low on memory, it stops early and keeps what it has saved. You can also make one PDF of the whole book, with contents, bookmarks and page numbers.</p>
+                        <ul class="text-sm font-medium text-slate-900 flex flex-wrap gap-3 mt-auto">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Big books open quickly</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Carry on a save that stopped</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Or the whole site as a ZIP</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Feature 2: Video and captions -->
+                <article class="bg-slate-50 rounded-2xl md:rounded-3xl border border-slate-200 hover:border-blue-700 transition-all duration-300 overflow-hidden flex flex-col shadow-sm hover:shadow-xl">
+                    <figure class="w-full aspect-[4/3] bg-white border-b border-slate-200 relative overflow-hidden">
+                        <iframe src="anim4.html?v=13" class="absolute inset-0 w-full h-full border-none pointer-events-none" title="Animation: making captions for a saved video" aria-hidden="true" tabindex="-1" scrolling="no"></iframe>
+                    </figure>
+                    <div class="p-6 lg:p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Videos on the page saved with it, plus captions.</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-6">Most videos<sup><a href="#note-video" id="ref-video" class="text-slate-600 hover:underline" aria-label="See note: video">*</a></sup> and audio that play inside the page are saved with it and play offline. If a video has no captions, you can make them in English, on computers where Chrome supports on-device speech recognition. It listens at normal speed, so a one-hour video takes about an hour. Captions are machine-made, so they may contain mistakes.</p>
+                        <ul class="text-sm font-medium text-slate-900 flex flex-wrap gap-3 mt-auto">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Streaming video saved as MP4</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Nothing is uploaded</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Feature 3: Notes and citations -->
+                <article class="bg-slate-50 rounded-2xl md:rounded-3xl border border-slate-200 hover:border-blue-700 transition-all duration-300 overflow-hidden flex flex-col shadow-sm hover:shadow-xl">
+                    <figure class="w-full aspect-[4/3] bg-white border-b border-slate-200 relative overflow-hidden">
+                        <iframe src="anim1.html?v=13" class="absolute inset-0 w-full h-full border-none pointer-events-none" title="Animation: highlighting text and saving notes" aria-hidden="true" tabindex="-1" scrolling="no"></iframe>
+                    </figure>
+                    <div class="p-6 lg:p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Highlight, add notes and cite.</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-6">Highlight in 6 colours, underline and write notes. After a one-time setup step, your notes save into the file itself with no save window, so they travel with the file. If you move a book to a new folder, it asks once which folder the book is in. Every saved page comes with draft citations you can check, correct and copy.</p>
+                        <ul class="text-sm font-medium text-slate-900 flex flex-wrap gap-3 mt-auto">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> APA 7, MLA 9, Harvard, Chicago 17, AGLC4</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Notes listed in the contents</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Feature 4: Markdown for AI -->
+                <article id="ai-markdown" class="bg-blue-50 rounded-2xl md:rounded-3xl border-2 border-blue-700 relative overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-all duration-300 scroll-mt-24">
+                    <figure class="w-full aspect-[4/3] bg-white border-b border-blue-100 relative overflow-hidden">
+                        <iframe src="anim3.html?v=13" class="absolute inset-0 w-full h-full border-none pointer-events-none" title="Animation: a saved book becomes Markdown files" aria-hidden="true" tabindex="-1" scrolling="no"></iframe>
+                    </figure>
+                    <div class="p-6 lg:p-8 flex-1 flex flex-col">
+                        <h3 class="text-xl lg:text-2xl font-bold text-slate-900 mb-3">Markdown for your own AI tools.</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-6">Turn a saved book into Markdown files for the AI tool or note app you already use. It reads the pages, the attached PDF, Word, PowerPoint and Excel files, and any video captions, then splits big books into parts that stay under common upload limits. It all happens on your computer.</p>
+                        <ul class="text-sm font-bold text-blue-800 flex flex-wrap gap-3 mt-auto">
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Reads the text inside attached files</li>
+                            <li class="flex items-center gap-2"><svg class="w-4 h-4 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Each part says which one comes next</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy -->
+    <section id="privacy" class="py-16 bg-slate-900 text-white scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <svg class="w-12 h-12 text-amber-500 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            <h2 class="text-3xl md:text-4xl font-bold mb-2">Save the webpages you want. Keep them on your device.</h2>
+            <p class="text-xl md:text-2xl font-semibold mb-6"><span class="text-white">What you save stays on your computer.</span> <span class="block md:inline text-amber-400 mt-1 md:mt-0">No servers. No tracking. No account.</span></p>
+            <p class="text-slate-300 text-lg mb-8 leading-relaxed max-w-4xl mx-auto">
+                Everything Nesaron Page Saver does happens on your own computer: saving webpages, making PDFs, captions and Markdown. What you save goes to a folder on your computer and never to us. There are no accounts and no tracking, and we run no servers. Captions and Markdown are made entirely on your computer. Once sales open, the only outside check is your licence key, sent with a device name to our payment partner.
+            </p>
+            <ul class="flex flex-wrap justify-center gap-4 text-sm font-semibold text-slate-300">
+                <li class="bg-slate-800 px-4 py-2 rounded-full border border-slate-700">✓ No analytics</li>
+                <li class="bg-slate-800 px-4 py-2 rounded-full border border-slate-700">✓ No sign-up</li>
+                <li class="bg-slate-800 px-4 py-2 rounded-full border border-slate-700">✓ Works offline</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-slate-50 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900">Try it free. Then pay once, or by the year.</h2>
+                <p class="mt-4 text-lg text-slate-600">Launch prices in US dollars. Nesaron Page Saver is not on sale yet, so the buttons below will work once it is in the Chrome Web Store. The final plan terms will be in the Licence Agreement when sales open.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto items-center">
+
+                <!-- Free -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900">Free trial</h3>
+                    <p class="text-slate-600 mt-2 text-sm">Try every kind of save.</p>
+                    <div class="my-6">
+                        <span class="text-4xl font-extrabold text-slate-900">US$0</span>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> 20 single-page saves</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> 3 multi-page saves (books or ZIPs)</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Draft citations, free in every plan</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Your saved books stay free to open</li>
+                    </ul>
+                    <span class="block w-full py-3 px-4 bg-slate-100 text-slate-700 font-bold text-center rounded-xl cursor-not-allowed" aria-disabled="true">Coming soon</span>
+                </div>
+
+                <!-- Lifetime -->
+                <div class="bg-blue-800 p-8 rounded-2xl border-2 border-blue-600 shadow-2xl md:-translate-y-4 relative">
+                    <p class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-amber-500 text-slate-900 px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide whitespace-nowrap">Pay once</p>
+                    <h3 class="text-xl font-bold text-white">Lifetime licence</h3>
+                    <p class="text-blue-100 mt-2 text-sm">One payment. No renewal fee.</p>
+                    <div class="my-6">
+                        <div>
+                            <span class="text-4xl font-extrabold text-white">US$89.99</span>
+                            <span class="text-blue-100">once</span>
+                        </div>
+                        <p class="text-blue-100 text-sm mt-1">For one computer</p>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-white font-medium">
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Unlimited single-page and multi-page saves</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Whole site as a ZIP (see the FAQ)</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Markdown for your AI tools</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Videos and machine-made captions</li>
+                        <li class="flex items-start gap-2"><svg class="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Highlights and notes inside your files</li>
+                    </ul>
+                    <span class="block w-full py-4 px-4 bg-amber-500 text-slate-900 font-bold text-center rounded-xl cursor-not-allowed" aria-disabled="true">Coming soon</span>
+                    <p class="text-center text-sm text-blue-100 mt-4">14-day refund, as the <a href="eula.html" class="underline hover:text-white">Licence Agreement</a> explains</p>
+                </div>
+
+                <!-- Yearly -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900">Yearly plan</h3>
+                    <p class="text-slate-600 mt-2 text-sm">For a course or a project.</p>
+                    <div class="my-6">
+                        <span class="text-4xl font-extrabold text-slate-900">US$39.99</span>
+                        <span class="text-slate-600">a year</span>
+                        <p class="text-slate-600 text-sm mt-1">For one computer</p>
+                    </div>
+                    <ul class="space-y-3 mb-8 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Every feature of the lifetime licence</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Billed once a year</li>
+                        <li class="flex items-center gap-2"><svg class="w-4 h-4 text-green-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg> Cancel any time; it works to the end of the year you paid for</li>
+                    </ul>
+                    <span class="block w-full py-3 px-4 bg-white border-2 border-slate-200 text-slate-700 font-bold text-center rounded-xl cursor-not-allowed" aria-disabled="true">Coming soon</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-white scroll-mt-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Questions and answers</h2>
+
+            <div class="space-y-4">
+                <div class="border border-slate-200 rounded-lg">
+                    <button type="button" class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center" aria-expanded="false">
+                        <span>How does Markdown for AI work?</span>
+                        <svg class="w-5 h-5 text-blue-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        Nesaron Page Saver reads your saved book, the PDF, Word, PowerPoint and Excel files saved with it, and any video captions, and writes them as Markdown files. A big book is split into parts that stay under common upload limits, and each part names the next one. You then add the files to the AI tool or note app you use. A scanned PDF that is only a picture of the page has no text for it to read. Nesaron Page Saver itself sends nothing to any AI service.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-lg">
+                    <button type="button" class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center" aria-expanded="false">
+                        <span>Can I save embedded videos<sup aria-hidden="true">**</sup> on a webpage?</span>
+                        <svg class="w-5 h-5 text-blue-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        Yes, most of them, on pages you can open yourself, including when you are signed in. Streaming video is saved as an MP4 file. It never clicks Start, Submit or Reply buttons. It is designed not to save protected or subscription streaming video, live streams or videos from video-sharing sites. Save only what you have the right to keep.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-lg">
+                    <button type="button" class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center" aria-expanded="false">
+                        <span>What is "Whole site as a ZIP"?</span>
+                        <svg class="w-5 h-5 text-blue-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        A wider kind of multi-page save. Instead of one book, it saves many pages of a website into one ZIP file, with a list of every page saved and a short read-me. It uses the same safety rules as a book: it skips sign-out, delete and checkout links and pauses politely between pages.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-lg">
+                    <button type="button" class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center" aria-expanded="false">
+                        <span>What does "lifetime licence" mean?</span>
+                        <svg class="w-5 h-5 text-blue-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        You pay once and use the paid features on one computer, with no renewal fee. Need it on a second computer? Buy a second licence, or use the yearly plan on that computer. The <a href="eula.html" class="text-blue-700 underline">Licence Agreement</a> has the full terms.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-lg">
+                    <button type="button" class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center" aria-expanded="false">
+                        <span>How can licensing work with no servers?</span>
+                        <svg class="w-5 h-5 text-blue-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        Our payment partner, Lemon Squeezy, sells the licence and checks the key. When licensing starts, the extension sends Lemon Squeezy only your licence key and a device name. Nothing you save, read or write is ever sent anywhere.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-lg">
+                    <button type="button" class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center" aria-expanded="false">
+                        <span>Where do my notes and highlights go?</span>
+                        <svg class="w-5 h-5 text-blue-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        Into the saved file on your computer. The first time you use it, a short setup asks you to turn on Chrome's "Allow access to file URLs" switch for the extension. After that, notes save themselves into the file about a second after each change. If you send the file to someone, your notes go with it.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-lg">
+                    <button type="button" class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center" aria-expanded="false">
+                        <span>Does the whole-book PDF work in every language?</span>
+                        <svg class="w-5 h-5 text-blue-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        The PDF uses the standard fonts built into every PDF reader, so it shows text in the Latin alphabet, such as English, Filipino, Spanish or French. Other writing systems, such as Chinese, Arabic or Thai, show as question marks in the PDF. The saved book itself shows every language as normal.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-lg">
+                    <button type="button" class="faq-btn w-full text-left px-6 py-4 font-bold text-slate-900 flex justify-between items-center" aria-expanded="false">
+                        <span>Which browsers does it work in?</span>
+                        <svg class="w-5 h-5 text-blue-700 transition-transform duration-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-600">
+                        Google Chrome on Windows, Mac, Linux and ChromeOS. Other browsers are planned.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="notes" class="py-10 bg-white border-t border-slate-200 scroll-mt-20" aria-labelledby="notes-heading">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 id="notes-heading" class="text-sm font-bold text-slate-900 mb-4">Notes</h2>
+    <ol class="list-none space-y-3 text-xs text-slate-600 leading-relaxed">
+      <li id="note-video" class="scroll-mt-24"><span class="font-bold text-slate-900">*</span> Video and audio: Nesaron Page Saver is designed not to save YouTube videos, video protected by DRM (digital rights management), video from subscription streaming services, or live streams. Save only video and audio you have the right to keep. You are responsible for what you save and how you use it. See our <a href="terms.html" class="text-blue-700 hover:underline">Terms of Use</a>.</li>
+      <li id="note-responsibility" class="scroll-mt-24"><span class="font-bold text-slate-900">**</span> Your responsibility: Nesaron Page Saver is a tool. You decide what to save, and you are responsible for it. Save only content you have the right to keep, follow each website's terms, and respect the copyright law where you live. We never see, check or receive anything you save. See our <a href="terms.html" class="text-blue-700 hover:underline">Terms of Use</a> and <a href="eula.html" class="text-blue-700 hover:underline">Licence Agreement</a>.</li>
+    </ol>
+    <p class="mt-4 italic text-xs text-slate-600 leading-relaxed">This website uses no cookies and no analytics.<br>Chrome and Chrome Web Store are trademarks of Google LLC.</p>
+  </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <img src="images/nesaron-logo-dark.svg" alt="Nesaron Page Saver" width="157" height="40" class="h-10 w-auto mx-auto md:mx-0">
+                    <p class="mt-3 text-sm text-slate-300">Nesaron. Keep what matters.</p>
+                </div>
+                <nav class="flex flex-wrap justify-center gap-6 text-sm" aria-label="Legal">
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="eula.html" class="hover:text-white transition-colors">Licence Agreement (EULA)</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms of Use</a>
+                </nav>
+            </div>
+            <div class="mt-8 text-center md:text-left text-sm text-slate-300 space-y-0 leading-snug">
+                <p>&copy; 2026 Nesaron<br>NSW, Australia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('hidden') === false;
+            mobileMenuBtn.setAttribute('aria-expanded', String(open));
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }));
+
+        document.querySelectorAll('.faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const open = content.classList.toggle('hidden') === false;
+                button.setAttribute('aria-expanded', String(open));
+                button.querySelector('svg').classList.toggle('rotate-180', open);
+            });
+        });
+    </script>
+</body>
+</html>
